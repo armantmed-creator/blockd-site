@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Blockd</title>
+<meta name="robots" content="index,follow">
+<meta name="description" content="How Blockd handles your data, including how its on-device VPN content filter works.">
+<link rel="canonical" href="https://blockdvpn.com/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="recovery-track" aria-hidden="true"><div class="recovery-fill" id="recoveryFill"></div></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">blockd<span>.</span></a>
+    <div class="nav-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a class="nav-cta" href="index.html">Home</a>
+    </div>
+  </div>
+</nav>
+<main class="doc">
+<h1>Blockd Privacy Policy</h1>
+<p class="doc-meta"><strong>Effective date:</strong> October 8, 2026<br><strong>Developer:</strong> EVI Holdings, LLC, 1209 Mtn Rd Pl NE, Albuquerque, NM 87110<br><strong>Contact:</strong> <a href="mailto:support@blockdvpn.com">support@blockdvpn.com</a></p>
+<p>Blockd is a recovery-focused content-blocking app made by EVI Holdings, LLC ("we," "us"). Recovery is personal, so Blockd is built local-first. The most sensitive information you create in the app stays on your device unless this policy says otherwise. This policy covers the Blockd iOS app, the Blockd browser extension and blockdvpn.com. It explains what we collect, what we deliberately don't collect, and the choices you have.</p>
+<hr />
+<h2>1. Summary (the short version)</h2>
+<ul>
+<li>Your recovery data, including streaks, urge logs, journal entries, triggers, relapse history and lesson progress, is stored <strong>on your device</strong>, not on our servers.</li>
+<li>Blockd filters content using a <strong>VPN configuration that runs on your iPhone</strong>. Your traffic is <strong>not</strong> routed through our servers, and we do <strong>not</strong> log, inspect, store or transmit your browsing history or network traffic.</li>
+<li>If you use the Community or other online features, limited data is processed through Firebase (Google) and Supabase, as described below.</li>
+<li>We do <strong>not</strong> sell your data. We do <strong>not</strong> show ads. We do <strong>not</strong> share your data with data brokers.</li>
+</ul>
+<hr />
+<h2>2. Information stored only on your device</h2>
+<p>The following is saved locally on your iPhone, in the app's private storage, and is never uploaded to our servers:</p>
+<ul>
+<li>Recovery start date, streak, and Brain Recovery progress</li>
+<li>Urge logs, including intensity, triggers, feelings, and reflections</li>
+<li>Journal entries and lesson takeaways</li>
+<li>Relapse records</li>
+<li>Lesson and meditation progress</li>
+<li>Onboarding answers, app settings and blocking preferences</li>
+</ul>
+<p>Your iOS backup settings (iCloud or computer backups) decide whether this data is included in your device backups. You and Apple control those backups, not us. Deleting the app deletes this local data from your device.</p>
+<h2>3. Content filtering and the VPN configuration</h2>
+<p>To block adult content across your whole iPhone, including Safari, other browsers and in-app browsers, Blockd installs a <strong>VPN configuration</strong> using Apple's Network Extension framework. iOS asks for your permission before installing it and shows a "VPN" indicator while it's active. This is how Apple lets apps filter content system-wide. Here is exactly what it does and doesn't do:</p>
+<ul>
+<li><strong>Filtering decisions happen on your device.</strong> When your iPhone looks up a website's domain name, Blockd checks it against a blocklist stored on your device. Blocked domains don't load.</li>
+<li><strong>Allowed lookups go to a public DNS resolver.</strong> Domains that aren't blocked are forwarded to a public DNS resolver so the site can load, the same as on any phone. That resolver receives the domain name and your IP address and handles them under its own privacy policy. We don't receive or control those lookups.</li>
+<li>Your traffic is <strong>not</strong> routed through servers we operate.</li>
+<li>We do <strong>not</strong> collect, log, store, or transmit your browsing history, the websites you visit, DNS queries, or the contents of your network traffic.</li>
+<li>We do <strong>not</strong> monitor or record what is blocked or when. Any short-lived lookup cache stays in memory on your device.</li>
+<li><strong>Blockd is not a privacy VPN.</strong> It doesn't hide your IP address, anonymize your traffic, or change your location. The configuration exists only to perform the blocking you enable. It isn't used for analytics, advertising, or any other purpose.</li>
+</ul>
+<p>You can turn the filter off at any time in the app, or remove the configuration in iOS Settings → General → VPN &amp; Device Management.</p>
+<h3>App blocking (Screen Time)</h3>
+<p>If you choose apps to block, Blockd uses Apple's Screen Time APIs. Apple gives Blockd only opaque tokens for your selections, so we can't see which apps you chose, and no usage data is sent to us.</p>
+<h3>Browser extension</h3>
+<p>The Blockd extension for Chrome, Edge and Brave blocks sites using the browser's built-in rules, which run locally. It doesn't collect, log or send your browsing history.</p>
+<h2>4. Information processed through our service providers</h2>
+<h3>Firebase (Google LLC)</h3>
+<p>If you use online features, we use Google Firebase:</p>
+<ul>
+<li><strong>Authentication.</strong> When you use the Community, Firebase Authentication creates an anonymous account identifier (UID) so you can manage your own posts. We do not require your real name or email.</li>
+<li><strong>Community posts.</strong> Posts, replies, chat messages, and favorites you submit to the Community are stored in Firebase (Cloud Firestore) so other users can see them. Don't include anything in posts that you don't want others to see.</li>
+<li><strong>Infrastructure data.</strong> Firebase may process standard technical data (such as IP address and device identifiers) as part of operating the service. Google's processing is governed by its own terms: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></li>
+</ul>
+<h3>Supabase</h3>
+<p>We use Supabase to run backend functions for certain app features. Supabase processes only the identifiers and data those features need, and it doesn't receive your on-device recovery data or browsing activity. Supabase's processing is governed by its own terms: <a href="https://supabase.com/privacy">supabase.com/privacy</a></p>
+<h3>Apple</h3>
+<p>Apple processes purchases and subscriptions. We receive only the anonymized transaction information needed to unlock features, such as whether a subscription is active. We never see your payment details.</p>
+<h2>5. What we do NOT collect</h2>
+<ul>
+<li>No browsing history, DNS history, or network traffic contents</li>
+<li>No contacts, photos, or location</li>
+<li>No advertising identifiers; no ad networks or third-party ad SDKs</li>
+<li>No sale or rental of personal information to anyone, ever</li>
+</ul>
+<h2>6. How we use information</h2>
+<p>We use the limited information we process only to operate app features you use (such as the Community), maintain security and prevent abuse, process purchases, and comply with law. We may look at aggregate, de-identified statistics, such as the number of Community posts per day, to improve Blockd. We don't use your data for advertising or profiling.</p>
+<h2>7. Data retention and deletion</h2>
+<ul>
+<li><strong>On-device data</strong> is kept until you delete it in the app or delete the app.</li>
+<li><strong>Community content</strong> is kept until you delete your posts or ask us to delete them. You can delete your own posts in the app.</li>
+<li><strong>Account deletion.</strong> You can ask us to delete your Community account and associated data by emailing <a href="mailto:support@blockdvpn.com">support@blockdvpn.com</a>. We'll delete it within 30 days, except where the law requires us to keep it.</li>
+</ul>
+<h2>8. Your rights</h2>
+<p>Depending on where you live (including the EU/EEA, UK, and California), you may have rights to access, correct, delete, or export personal data we hold, and to object to or restrict certain processing. Nearly all Blockd data lives on your device under your control, so you can exercise most of these rights directly in the app. For anything else, contact us at <a href="mailto:support@blockdvpn.com">support@blockdvpn.com</a>. We won't discriminate against you for exercising your rights. We don't "sell" or "share" personal information as the California Consumer Privacy Act defines those terms.</p>
+<h2>9. Children</h2>
+<p>Blockd is intended for users 17 and older and is not directed at children. We do not knowingly collect personal information from children. If you believe a child has provided us personal information, contact us and we will delete it.</p>
+<h2>10. Security</h2>
+<p>We use industry-standard protections. These include Apple's on-device data protection for local data, encryption in transit, and Firebase and Supabase security rules that restrict access to online data. For example, only you can delete your own posts. No system is perfectly secure, but because of our local-first design, the most sensitive data never leaves your device.</p>
+<h2>11. International transfers</h2>
+<p>Firebase and Supabase may process data on servers in the United States and other countries. Where required, these transfers rely on appropriate safeguards such as standard contractual clauses.</p>
+<h2>12. Changes to this policy</h2>
+<p>If we make material changes, we'll update the effective date and notify you in the app. If you keep using Blockd after the changes take effect, you accept the updated policy.</p>
+<h2>13. Contact</h2>
+<p>EVI Holdings, LLC<br>1209 Mtn Rd Pl NE, Albuquerque, NM 87110<br>Questions or requests: <a href="mailto:support@blockdvpn.com">support@blockdvpn.com</a></p>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a class="wordmark" href="index.html">blockd<span>.</span></a>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="mailto:support@blockdvpn.com">Contact</a>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 EVI Holdings, LLC · 1209 Mtn Rd Pl NE, Albuquerque, NM 87110.</p>
+  </div>
+</footer>
+<script>
+  const fill = document.getElementById('recoveryFill');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    fill.style.width = (p * 100).toFixed(2) + '%';
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+</body>
+</html>

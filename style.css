@@ -1,0 +1,348 @@
+/* ============================================================
+   Blockd — blockd.app
+   Tokens: near-black, white glass, one pink accent per zone.
+   Type: Instrument Serif (display, italic) / Instrument Sans (body)
+   ============================================================ */
+
+:root {
+  --bg: #07070a;
+  --bg-raised: #0d0d12;
+  --glass: rgba(255, 255, 255, 0.055);
+  --glass-strong: rgba(255, 255, 255, 0.09);
+  --stroke: rgba(255, 255, 255, 0.10);
+  --stroke-soft: rgba(255, 255, 255, 0.06);
+  --text: #f2f2f5;
+  --text-dim: rgba(242, 242, 245, 0.62);
+  --text-faint: rgba(242, 242, 245, 0.38);
+  --pink: #ff5c8a;
+  --pink-soft: rgba(255, 92, 138, 0.14);
+  --lavender: #9aa3d4;
+  --radius: 22px;
+  --radius-sm: 14px;
+  --max: 1060px;
+  --sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --serif: "Instrument Serif", "New York", Georgia, serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--pink-soft); color: var(--text); }
+
+a { color: inherit; }
+
+/* ---------- Signature: scroll recovery bar ---------- */
+.recovery-track {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 60;
+}
+.recovery-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff5c8a, #ff7ba1);
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 12px rgba(255, 92, 138, 0.45);
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: fixed;
+  top: 3px; left: 0; right: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(7, 7, 10, 0.55);
+  border-bottom: 1px solid var(--stroke-soft);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wordmark {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+.wordmark span { color: var(--pink); }
+.nav-links { display: flex; gap: 26px; align-items: center; }
+.nav-links a {
+  font-size: 14.5px;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+.nav-cta {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text) !important;
+  background: var(--glass-strong);
+  border: 1px solid var(--stroke);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 160ms ease;
+}
+.nav-cta:hover { background: rgba(255, 255, 255, 0.14); }
+
+/* ---------- Layout primitives ---------- */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+.day-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 18px;
+}
+.day-marker::before {
+  content: "";
+  width: 22px; height: 1px;
+  background: var(--pink);
+  opacity: 0.7;
+}
+.day-marker em { color: var(--pink); font-style: normal; }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  /* faint night-sky glow, echoes the app's day/night cycle */
+  content: "";
+  position: absolute;
+  top: -30%; right: -15%;
+  width: 720px; height: 720px;
+  background: radial-gradient(circle, rgba(154, 163, 212, 0.10), transparent 65%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+}
+h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(44px, 6.2vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+}
+h1 em {
+  font-style: italic;
+  color: var(--pink);
+}
+.hero-sub {
+  margin-top: 22px;
+  font-size: 19px;
+  color: var(--text-dim);
+  max-width: 46ch;
+}
+.hero-actions { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  transition: transform 160ms ease, background 160ms ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--text); color: #0a0a0d; }
+.btn-primary:hover { background: #fff; }
+.btn-ghost {
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+}
+.btn-ghost:hover { background: var(--glass-strong); }
+.hero-note { margin-top: 18px; font-size: 13.5px; color: var(--text-faint); }
+
+/* ---------- Hero object: the real Brain Recovery tile ---------- */
+.tile-stack { display: flex; flex-direction: column; gap: 14px; }
+.glass-tile {
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+.br-tile { display: flex; align-items: center; gap: 14px; }
+.br-icon {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: var(--pink-soft);
+  display: grid; place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.br-body { flex: 1; min-width: 0; }
+.br-label { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.br-bar {
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.br-bar-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #ff5c8a, #ff7ba1);
+  border-radius: 999px;
+  transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.br-pct { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+.br-chevron { color: var(--text-faint); font-size: 18px; }
+.urge-pill {
+  text-align: center;
+  font-weight: 600;
+  font-size: 15.5px;
+  padding: 16px 20px;
+}
+.circle-row { display: flex; justify-content: space-between; padding: 4px 6px; }
+.cta-circle {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  display: grid; place-items: center;
+  font-size: 19px;
+}
+.cta-circle.panic { background: rgba(255, 59, 48, 0.18); border-color: rgba(255, 59, 48, 0.35); }
+.circle-label { font-size: 10.5px; color: var(--text-faint); text-align: center; margin-top: 6px; }
+.circle-item { display: flex; flex-direction: column; align-items: center; }
+.tile-caption {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+/* ---------- Sections ---------- */
+section { padding: 110px 0; border-top: 1px solid var(--stroke-soft); }
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  max-width: 22ch;
+}
+h2 em { font-style: italic; color: var(--pink); }
+.section-sub { margin-top: 16px; color: var(--text-dim); max-width: 58ch; font-size: 17.5px; }
+
+.feature-grid {
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.feature {
+  background: var(--glass);
+  border: 1px solid var(--stroke-soft);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+.feature h3 { font-size: 16.5px; font-weight: 600; margin-bottom: 8px; }
+.feature p { font-size: 14.5px; color: var(--text-dim); line-height: 1.55; }
+.feature .glyph { font-size: 22px; margin-bottom: 14px; display: block; }
+
+/* privacy section */
+.privacy-claims { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; max-width: 760px; }
+.claim { display: flex; gap: 12px; align-items: baseline; font-size: 16px; color: var(--text-dim); }
+.claim::before { content: "—"; color: var(--pink); flex-shrink: 0; }
+.claim strong { color: var(--text); font-weight: 600; }
+
+/* ---------- Footer ---------- */
+footer { border-top: 1px solid var(--stroke-soft); padding: 54px 0 64px; }
+.footer-grid { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; align-items: flex-start; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 14px; color: var(--text-dim); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+.footer-note { font-size: 13px; color: var(--text-faint); margin-top: 18px; max-width: 60ch; }
+
+/* ---------- Legal document pages ---------- */
+.doc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 150px 24px 100px;
+}
+.doc h1 {
+  font-size: clamp(34px, 4.5vw, 46px);
+}
+.doc .doc-meta { margin-top: 12px; color: var(--text-faint); font-size: 14px; }
+.doc h2 {
+  font-family: var(--sans);
+  font-weight: 650;
+  font-size: 20px;
+  margin-top: 44px;
+  margin-bottom: 12px;
+  max-width: none;
+}
+.doc h3 { font-size: 16.5px; font-weight: 600; margin-top: 26px; margin-bottom: 8px; }
+.doc p, .doc li { color: var(--text-dim); font-size: 16px; margin-bottom: 12px; }
+.doc ul { padding-left: 22px; margin-bottom: 14px; }
+.doc strong { color: var(--text); font-weight: 600; }
+.doc hr { border: none; border-top: 1px solid var(--stroke-soft); margin: 36px 0; }
+.doc a { color: var(--lavender); }
+
+/* ---------- Motion & a11y ---------- */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 700ms ease, transform 700ms ease; }
+.reveal.in { opacity: 1; transform: none; }
+:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .br-bar-fill { transition: none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .privacy-claims { grid-template-columns: 1fr; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  section { padding: 80px 0; }
+}
+
+/* ---------- VPN explainer (privacy section) ---------- */
+.vpn-note { margin-top: 40px; font-size: 15px; max-width: 64ch; padding-top: 22px; border-top: 1px solid var(--stroke-soft); }
+.vpn-note strong { color: var(--text); font-weight: 600; }
+.vpn-note a { color: var(--lavender); }
+.doc .doc-meta { line-height: 1.9; }
