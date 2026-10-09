@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility — Blockd</title>
+<meta name="robots" content="index,follow">
+<meta name="description" content="Blockd's commitment to accessibility.">
+<link rel="canonical" href="https://blockdvpn.com/accessibility.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="recovery-track" aria-hidden="true"><div class="recovery-fill" id="recoveryFill"></div></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">blockd<span>.</span></a>
+    <div class="nav-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a class="nav-cta" href="index.html">Home</a>
+    </div>
+  </div>
+</nav>
+<main class="doc">
+<h1>Blockd Accessibility Statement</h1>
+<p class="doc-meta"><strong>Last updated:</strong> October 8, 2026</p>
+<p>We want Blockd to be usable by everyone working on recovery, including people who rely on assistive technologies.</p>
+<h2>Our commitment</h2>
+<p>Blockd is built with Apple's native accessibility technologies and we work toward conformance with recognized accessibility standards (WCAG 2.1 Level AA, as applicable to native mobile apps) and the European Accessibility Act.</p>
+<h2>What we support</h2>
+<ul>
+<li><strong>VoiceOver.</strong> Core screens, buttons, and progress indicators carry accessibility labels so the app can be navigated by screen reader.</li>
+<li><strong>Dynamic Type.</strong> Text throughout the app respects your preferred text size where possible.</li>
+<li><strong>Reduce Motion.</strong> Decorative animation is reduced when Reduce Motion is enabled in iOS Settings.</li>
+<li><strong>Contrast.</strong> We aim for sufficient color contrast on interactive elements and text.</li>
+<li><strong>Haptics and audio are supplementary.</strong> No essential information is conveyed only through sound, haptics, or color.</li>
+</ul>
+<h2>Known limitations</h2>
+<p>Some rich animated content (such as the animated brain character) is decorative. Its state is mirrored by the Brain Recovery percentage, which is fully accessible as text. We are continuing to improve labeling and alternatives for custom visual elements.</p>
+<h2>Feedback</h2>
+<p>If you encounter an accessibility barrier in Blockd, please tell us at <a href="mailto:support@blockdvpn.com">support@blockdvpn.com</a>. Accessibility reports are prioritized and we aim to respond within 5 business days.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a class="wordmark" href="index.html">blockd<span>.</span></a>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="mailto:support@blockdvpn.com">Contact</a>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 EVI Holdings, LLC · 1209 Mtn Rd Pl NE, Albuquerque, NM 87110.</p>
+  </div>
+</footer>
+<script>
+  const fill = document.getElementById('recoveryFill');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    fill.style.width = (p * 100).toFixed(2) + '%';
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+</body>
+</html>
